@@ -1,5 +1,29 @@
 # 03 JavaScript: Password Generator
 
+## Password Generator
+
+## Description
+
+The Password Generator creates unique passwords from user supplied preferences. Users can specify length (between 8 and 128 characters) and character sets to include. 
+
+Character Sets:
+   - Lowercase letters
+   - Uppercase letters
+   - Numbers
+   - Special Characters
+
+## Screen Image
+
+![The Password Generator application displays a red button to "Generate Password".](./assets/PasswordGeneratorImage.png)
+
+## Links to Application and Github
+
+[Password Generator](https://cstuhlfire.github.io/PasswordGenerator/)
+
+[Link to PasswordGenerator Github repository](https://github.com/cstuhlfire/PasswordGenerator)
+
+# Original Assignment
+
 ## Your Task
 
 This week’s homework requires you to modify starter code to create an application that enables employees to generate random passwords based on criteria that they’ve selected. This app will run in the browser and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean and polished, responsive user interface that adapts to multiple screen sizes.
