@@ -26,21 +26,22 @@ function writePassword() {
 
 //************************************************************************ */
 // Function - Prompt user for password preferences and build password
-// Returns pw (password)
+// Returns password
 function generatePassword() {
-  let pw = ""; //string for building password
+  let password = ""; //string for building password
+  let letsContinue = true;
 
   resetChoices();
   promptPasswordLength();
   
   // If the user did not cancel, prompt for the other criteria
   if (userChoices.length !== null){
-    let letsContinue = getChoices();
+    letsContinue = getChoices();
     if (letsContinue) {
-      pw = buildPassword();
+      password = buildPassword();
     }
   }
-  return pw;
+  return password;
 }
 
 //************************************************************************ */
@@ -117,7 +118,7 @@ function getChoices () {
     userChoices.numbers &&
     userChoices.special) {
       // User has chosen at least one character set
-      return;
+      return letsContinue;
   }
   else {
     letsContinue = true;
