@@ -21,19 +21,7 @@ function generatePassword() {
 
   // If the user did not cancel, prompt for the other criteria
   if (len !== null){
-    // Allow lowercase?
-    let lower = confirm("Do you want to include lowercase letters in your password?\n\nChoose OK to include and Canel to exclude.");
-    
-    // Allow uppercase?
-    let upper = confirm("Do you want to include uppercase letters in your password?\n\nChoose OK to include and Canel to exclude.");
-    
-    // Allow numeric?
-    let num = confirm("Do you want to include numbers in your password?\n\nChoose OK to include and Canel to exclude.");
-    
-    // Allow special characters?
-    let special = confirm("Do you want to include special characters in your password?\n\nChoose OK to include and Canel to exclude.");
-
-    console.log(lower, upper, num, special);
+    promptCharTypes();
   }
   
   return pw;
@@ -41,7 +29,7 @@ function generatePassword() {
 
 // Prompt for password length and check if valid number
 // Returns len (length)
-function promptPasswordLength(){
+function promptPasswordLength() {
   let len = 0;
   
   //prompt user for number until input criteria is met
@@ -55,6 +43,27 @@ function promptPasswordLength(){
   }
   // return len for length of password desired
   return len;
+}
+ 
+function promptCharTypes() {
+  // initialize array to false
+  let typeArray = [false, false, false, false];
+  let i = 0;
+
+  // Allow lowercase?
+  typeArray[i++] = confirm("Do you want to include lowercase letters in your password?\n\nChoose OK to include and Canel to exclude.");
+
+  // Allow uppercase?
+  typeArray[i++] = confirm("Do you want to include uppercase letters in your password?\n\nChoose OK to include and Canel to exclude.");
+  
+  // Allow numeric?
+  typeArray[i++] = confirm("Do you want to include numbers in your password?\n\nChoose OK to include and Canel to exclude.");
+
+  // Allow special characters?
+  typeArray[i] = confirm("Do you want to include special characters in your password?\n\nChoose OK to include and Canel to exclude.");
+
+  console.log(typeArray);
+  return typeArray;
 }
 
 // query length and check if valid ***
