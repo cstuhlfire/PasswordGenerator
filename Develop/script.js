@@ -13,22 +13,40 @@ function writePassword() {
 }
 
 // Prompt user for password preferences and build password
+// Returns pw (password)
 function generatePassword() {
   let pw = ""; //string for building password
   
   let len = promptPasswordLength();
+
+  // If the user did not cancel, prompt for the other criteria
+  if (len !== null){
+    // Allow lowercase?
+    let lower = confirm("Do you want to include lowercase letters in your password?\n\nChoose OK to include and Canel to exclude.");
+    
+    // Allow uppercase?
+    let upper = confirm("Do you want to include uppercase letters in your password?\n\nChoose OK to include and Canel to exclude.");
+    
+    // Allow numeric?
+    let num = confirm("Do you want to include numbers in your password?\n\nChoose OK to include and Canel to exclude.");
+    
+    // Allow special characters?
+    let special = confirm("Do you want to include special characters in your password?\n\nChoose OK to include and Canel to exclude.");
+
+    console.log(lower, upper, num, special);
+  }
   
   return pw;
 }
 
 // Prompt for password length and check if valid number
-// Returns length
+// Returns len (length)
 function promptPasswordLength(){
   let len = 0;
   
   //prompt user for number until input criteria is met
   while (isNaN(len) || (len < 8 || len > 128)){
-    len = prompt("Enter the length of the password.\nMust be a number between 8 and 128.");
+    len = prompt("Enter the length of the password.\n\nMust be a number between 8 and 128.");
 
     // if the user cancels, return len
     if (len === null){
@@ -39,11 +57,11 @@ function promptPasswordLength(){
   return len;
 }
 
-// query length and check if valid
-// query lowercase
-// query uppercase
-// query numberic
-// query special characters
+// query length and check if valid ***
+// query lowercase ***
+// query uppercase ***
+// query numeric ***
+// query special characters ***
 // verify selection criteria (validate at least one criteria is chosen)
 // continue prompting until selection criteria satisfied
 // based on selection, build selection array
